@@ -1,3 +1,4 @@
+package Initial;
 
 public class CoreJava {
 

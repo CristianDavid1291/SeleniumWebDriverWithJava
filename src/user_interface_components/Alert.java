@@ -19,9 +19,7 @@ public class Alert {
 		driver.switchTo().alert().accept();
 		driver.findElement(By.id("confirmbtn")).click();
 		driver.switchTo().alert().dismiss();
-	
-		
+
 	}
 
-	
 }
