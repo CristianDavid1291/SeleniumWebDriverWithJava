@@ -1,6 +1,5 @@
 package user_interface_components;
 
-import java.awt.RenderingHints.Key;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
