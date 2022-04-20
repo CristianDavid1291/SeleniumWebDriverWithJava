@@ -20,9 +20,6 @@ public class Calendars {
 		driver.findElement(By.id("travel_date")).click();
 
 		WebElement datepicker = driver.findElement(By.cssSelector("div[class='datepicker-days'] [class='datepicker-switch']"));
-
-		
-		List<WebElement> months = driver.findElements(By.className("month"));
 		
 
 		 //Looking for month
