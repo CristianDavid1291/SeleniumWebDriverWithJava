@@ -30,7 +30,7 @@ public class Scope {
 
 		// 3. Count links of the first column of footer
 		WebElement elementFooter = driver.findElement(By.xpath("//div[@id='gf-BIG'] //td[1]"));
-	List<WebElement> column = elementFooter.findElements(By.tagName("a"));
+		List<WebElement> column = elementFooter.findElements(By.tagName("a"));
 		System.out.println(column.size());
 
 		// 4. click on each link in the column an verify if those links work properly
@@ -38,7 +38,7 @@ public class Scope {
 		String clickOnNewTab = Keys.chord(Keys.CONTROL, Keys.ENTER);
 		for (int i = 1; i < column.size(); i++) {
 
-			 //a.moveToElement(column.get(i)).keyDown(Keys.CONTROL).click().build().perform();
+			// a.moveToElement(column.get(i)).keyDown(Keys.CONTROL).click().build().perform();
 			column.get(i).sendKeys(clickOnNewTab);
 
 		}
@@ -48,9 +48,8 @@ public class Scope {
 			driver.switchTo().window(it.next());
 			System.out.println(driver.getTitle());
 		}
-		
+
 		driver.quit();
-		
 
 	}
 
