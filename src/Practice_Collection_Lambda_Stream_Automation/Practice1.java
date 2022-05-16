@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 //Get the number of links of the page 
-// text links
+//text links
 //the number of links broken
 public class Practice1 {
 
