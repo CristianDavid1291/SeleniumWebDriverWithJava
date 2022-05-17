@@ -1,9 +1,13 @@
 package RelativeLocators;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
@@ -13,7 +17,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class InvokingMultipleWIndowsTabs {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
@@ -25,7 +29,16 @@ public class InvokingMultipleWIndowsTabs {
 		driver.switchTo().newWindow(WindowType.TAB);
 		
 		driver.get("https://rahulshettyacademy.com/angularpractice/");
-		driver.findElement(By.cssSelector("input.form-control[name='name']")).sendKeys(firstElement);
+		WebElement name = driver.findElement(By.cssSelector("input.form-control[name='name']"));
+		name.sendKeys(firstElement);
+		
+		//Screenshots
+		File file = name.getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(file, new File("logo.png"));
+		
+		//Get Height and width
+		System.out.println(name.getRect().getDimension().getHeight());
+		System.out.println(name.getRect().getDimension().getWidth());
 
 	}
 
